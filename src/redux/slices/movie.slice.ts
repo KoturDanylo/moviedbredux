@@ -63,7 +63,7 @@ const movieSlice = createSlice({
                 state.details = action.payload;
                 const { genres } = action.payload;
                 state.details = action.payload;
-                const genresArr = genres.map(value => value.name);
+                const genresArr = genres.map((value: { name: any; }) => value.name);
                 state.genresOfOneMovie = genresArr.toString().replaceAll(',', ',').toLowerCase();
             });
     },
